@@ -1,22 +1,28 @@
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
 
-car_width =100;
-car_height =90;
-background_image ="racing.jpg";
-car_image = "car1.png";
+car1_width =100;
+car1_height =90;
+car1_image = "car1.png";
+car1_x = 10;
+car1_y = 10;
 
-car_x = 10;
-car_y = 10;
+car2_width =100;
+car2_height =90;
+car2_image = "car2.png";
+car2_x = 10;
+car2_y = 100;
+
+background_image ="racing.jpg";
 
 function add() {
 	background_imgTag = new Image(); 
 	background_imgTag.onload = uploadBackground; 
 	background_imgTag.src = background_image;  
 
-	car_imgTag = new Image(); 
-	car_imgTag.onload = uploadcar; 
-	car_imgTag.src = car_image;  
+	car1_imgTag = new Image(); 
+	car1_imgTag.onload = uploadcar; 
+	car1_imgTag.src = car1_image;  
 }
 
 function uploadBackground() {
@@ -24,7 +30,7 @@ function uploadBackground() {
 	canvas.width, canvas.height);
  }
 	function uploadcar() {
-		 ctx.drawImage(car_imgTag, car_x, car_y, car_width, car_height);
+		 ctx.drawImage(car1_imgTag, car1_x, car1_y, car1_width, car1_height);
 		 }
 
 window.addEventListener("keydown",my_keydown);
@@ -44,29 +50,29 @@ if (keypressed==39){
 }
 }
 function up(){
-	if(car_y >=0){
-		car_y = car_y-10;
+	if(car1_y >=0){
+		car1_y = car1_y-10;
 		uploadBackground()
 		uploadcar()
 	}
 }
 function down(){
-	if(car_y <=500){
-		car_y = car_y+10;
+	if(car1_y <=500){
+		car1_y = car1_y+10;
 		uploadBackground()
 		uploadcar()
 	}
 }
 function left(){
-	if(car_x >=0){
-		car_x = car_x-10;
+	if(car1_x >=0){
+		car1_x = car1_x-10;
 		uploadBackground()
 		uploadcar()
 	}
 }
 function right(){
-	if(car_x <=700){
-		car_x = car_x+10;
+	if(car1_x <=700){
+		car1_x = car1_x+10;
 		uploadBackground()
 		uploadcar()
 	}
